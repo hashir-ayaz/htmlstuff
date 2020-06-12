@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>hashir stuff</title>
+  </head>
+  <body>
+
+<form>
+
+  <label for="country_code">Country code:</label>
+  <input type="text" id="country_code" name="country_code" pattern="[A-Za-z1-9\s]{3}" title="Three letter country code"><br><br>
+  <label for="email">email</label>
+  <input type="email" name="email" ><br><br>
+  <label for="pswd">password</label>
+  <input class="password" type="password" name="password"><br><br>
+  <label for="confpass">confirmpassword</label>
+  <input class="confpass" type="password" name="confpass">
+<p id="pswdmsg" style="display:none">Password and Confirm Password don't match</p>
+
+  <br>
+<input class="fahd" type="submit">
+</form>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.fahd').click(function(event){
+
+        data = $('.password').val();
+        var len = data.length;
+
+
+        if($('.password').val() != $('.confpass').val()) {
+            alert("Password and Confirm Password don't match");
+            // Prevent form submission
+            event.preventDefault();
+        }
+
+    });
+});
+</script>
+  </body>
+</html>
